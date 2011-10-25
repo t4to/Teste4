@@ -1,0 +1,31 @@
+pt-BR:
+  activerecord:    
+    attributes:
+      user:
+        password: "Senha"
+        reset_password_token: "Token"
+      item:
+        preco: "Preço"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: " deve ser preenchido."
+              taken: " já foi utilizado."
+              invalid: " inválido."
+            password:
+              blank: " deve ser preenchida."
+              confirmation: " não confere com a confirmação."
+            reset_password_token:
+              blank: "inválido."
+        item:
+          attributes:
+            categoria_id:
+              blank: "deve ser selecionada."
+            nome:
+              taken: "do Item já existente."
+        categoria:
+          attributes:
+            nome:
+              taken: "da Categoria já existente."           
