@@ -1,5 +1,15 @@
 Teste4::Application.routes.draw do
 
+  get "mobile/index"
+
+  get "mobile/lista_area"
+
+  get "mobile/lista_categoria"
+
+  get "mobile/lista_perfil"
+
+  get "mobile/twitter"
+
   devise_for :admins,
 			:path => '/',
 			:path_names => {
