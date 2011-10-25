@@ -1,4 +1,7 @@
 class AssuntosController < ApplicationController
+
+	before_filter :authenticate_admin!
+
   # GET /assuntos
   # GET /assuntos.xml
   def index
@@ -44,7 +47,7 @@ class AssuntosController < ApplicationController
 
     respond_to do |format|
       if @assunto.save
-        format.html { redirect_to(@assunto, :notice => 'Assunto was successfully created.') }
+        format.html { redirect_to(assunto_url, :notice => 'Assunto was successfully created.') }
         format.xml  { render :xml => @assunto, :status => :created, :location => @assunto }
       else
         format.html { render :action => "new" }
@@ -60,7 +63,7 @@ class AssuntosController < ApplicationController
 
     respond_to do |format|
       if @assunto.update_attributes(params[:assunto])
-        format.html { redirect_to(@assunto, :notice => 'Assunto was successfully updated.') }
+        format.html { redirect_to(assunto_url, :notice => 'Assunto was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

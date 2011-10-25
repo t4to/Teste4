@@ -1,4 +1,7 @@
 class PerfisController < ApplicationController
+
+	before_filter :authenticate_admin!
+
   # GET /perfis
   # GET /perfis.xml
   def index
@@ -44,7 +47,7 @@ class PerfisController < ApplicationController
 
     respond_to do |format|
       if @perfil.save
-        format.html { redirect_to(@perfil, :notice => 'Perfil was successfully created.') }
+        format.html { redirect_to(perfis_url, :notice => 'Perfil was successfully created.') }
         format.xml  { render :xml => @perfil, :status => :created, :location => @perfil }
       else
         format.html { render :action => "new" }
@@ -60,7 +63,7 @@ class PerfisController < ApplicationController
 
     respond_to do |format|
       if @perfil.update_attributes(params[:perfil])
-        format.html { redirect_to(@perfil, :notice => 'Perfil was successfully updated.') }
+        format.html { redirect_to(perfis_url, :notice => 'Perfil was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

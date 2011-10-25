@@ -41,7 +41,6 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.singular(/ois$/i, 'ol')
   inflect.singular(/uis$/i, 'ul')
   inflect.singular(/(r|t|f|v)is$/i, '\1il')
-  inflect.singular(/ns$/i, 'm')
   inflect.singular(/sses$/i, 'sse')
   inflect.singular(/^(.*[^s]s)es$/i, '\1')
   inflect.singular(/ães$/i, 'ão')

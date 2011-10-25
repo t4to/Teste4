@@ -1,4 +1,7 @@
 class AreasController < ApplicationController
+
+	before_filter :authenticate_admin!
+
   # GET /areas
   # GET /areas.xml
   def index
@@ -44,7 +47,8 @@ class AreasController < ApplicationController
 
     respond_to do |format|
       if @area.save
-        format.html { redirect_to(@area, :notice => 'Area was successfully created.') }
+        #format.html { redirect_to(@area, :notice => 'Area was successfully created.') }
+		format.html { redirect_to(areas_url, :notice => 'Area was successfully created.') }
         format.xml  { render :xml => @area, :status => :created, :location => @area }
       else
         format.html { render :action => "new" }
@@ -60,7 +64,8 @@ class AreasController < ApplicationController
 
     respond_to do |format|
       if @area.update_attributes(params[:area])
-        format.html { redirect_to(@area, :notice => 'Area was successfully updated.') }
+        #format.html { redirect_to(@area, :notice => 'Area was successfully updated.') }
+		format.html { redirect_to(areas_url, :notice => 'Area was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

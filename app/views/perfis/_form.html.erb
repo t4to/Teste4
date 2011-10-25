@@ -13,7 +13,10 @@
 
   <div class="field">
     <%= f.label :categoria_id %><br />
-    <%= f.text_field :categoria_id %>
+    <!-- <%= f.text_field :categoria_id %> -->
+	<%= f.collection_select(:categoria_id,
+		Categoria.all,
+		:id, :nome) %>	
   </div>
   <div class="field">
     <%= f.label :user %><br />

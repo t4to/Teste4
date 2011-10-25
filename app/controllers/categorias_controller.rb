@@ -1,4 +1,7 @@
 class CategoriasController < ApplicationController
+
+	before_filter :authenticate_admin!
+
   # GET /categorias
   # GET /categorias.xml
   def index
@@ -44,7 +47,7 @@ class CategoriasController < ApplicationController
 
     respond_to do |format|
       if @categoria.save
-        format.html { redirect_to(@categoria, :notice => 'Categoria was successfully created.') }
+        format.html { redirect_to(categorias_url, :notice => 'Categoria was successfully created.') }
         format.xml  { render :xml => @categoria, :status => :created, :location => @categoria }
       else
         format.html { render :action => "new" }
@@ -60,7 +63,7 @@ class CategoriasController < ApplicationController
 
     respond_to do |format|
       if @categoria.update_attributes(params[:categoria])
-        format.html { redirect_to(@categoria, :notice => 'Categoria was successfully updated.') }
+        format.html { redirect_to(categorias_url, :notice => 'Categoria was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

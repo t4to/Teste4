@@ -13,7 +13,10 @@
 
   <div class="field">
     <%= f.label :assunto_id %><br />
-    <%= f.text_field :assunto_id %>
+    <!-- <%= f.text_field :assunto_id %> -->
+	<%= f.collection_select(:assunto_id,
+		Assunto.all,
+		:id, :nome) %>	
   </div>
   <div class="field">
     <%= f.label :nome %><br />
