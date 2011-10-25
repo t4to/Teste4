@@ -1,4 +1,12 @@
 Teste4::Application.routes.draw do
+  resources :perfis
+
+  resources :categorias
+
+  resources :areas
+
+  resources :assuntos
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
