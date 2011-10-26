@@ -14,7 +14,6 @@ ActiveSupport::Inflector.inflections do |inflect|
 
   inflect.plural(/$/,  's')
   inflect.plural(/(s)$/i,  '\1')
-  inflect.plural(/^(paí)s$/i, '\1ses')
   inflect.plural(/(z|r)$/i, '\1es')
   inflect.plural(/al$/i,  'ais')
   inflect.plural(/el$/i,  'eis')
