@@ -2,10 +2,10 @@ Teste4::Application.routes.draw do
 
 	match 'm' => 'mobile#index', :as => 'mobile_home'
 	match 'm/info' => 'mobile#info', :as => 'mobile_info'
-	match ':assunto_id/areas' => 'home#lista_area', :as => 'areas_mobile'
-	match ':area_id/categorias' => 'home#lista_categoria', :as => 'categorias_mobile'
-	match ':categoria_id/perfis' => 'home#lista_perfil', :as => 'perfis_mobile'
-	match ':perfil_id/posts' => 'home#twitter', :as => 'twitter_mobile'
+	match 'm/:assunto_id/areas' => 'mobile#lista_area', :as => 'areas_mobile'
+	match 'm/:area_id/categorias' => 'mobile#lista_categoria', :as => 'categorias_mobile'
+	match 'm/:categoria_id/perfis' => 'mobile#lista_perfil', :as => 'perfis_mobile'
+	match 'm/:perfil_id/posts' => 'mobile#twitter', :as => 'twitter_mobile'
 
 	devise_for :admins,
 			:path => '/',

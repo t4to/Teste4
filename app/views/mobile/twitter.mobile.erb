@@ -1,2 +1,29 @@
-<h1>Mobile#twitter</h1>
-<p>Find me in app/views/mobile/twitter.html.erb</p>
+<div data-role="header" data-theme="b" data-position="inline">
+	<%= link_to "Voltar", "#", "data-rel" => "back", "data-direction" => "reverse", "data-icon" => "arrow-l" %>
+	<h1>
+		@<%= @screen_name %>
+	</h1>
+	
+	<%= link_to "Atualizar", "#", "data-icon" => "refresh", "class" => "ui-btn-right" %>
+</div>
+
+<div data-role="content" data-theme="b">
+	<div>
+		<ul data-role="listview" data-theme="d" data-inset="true">
+			<li>
+				<img alt="<%= @screen_name %>" src="<%= @imagem_perfil %>">
+				@<%= @screen_name %>
+			</li>
+		</ul>
+	</div>
+
+	<ul data-role="listview" data-theme="d" data-inset="true">
+		<% @resultados.each_with_index do |resultado, index| %>
+			<li>
+				
+					<%= index + 1%> - <%= resultado.text%>
+				
+			</li>	
+		<% end %>
+	</ul>
+</div><!-- /content -->

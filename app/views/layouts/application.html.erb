@@ -20,13 +20,15 @@
         </div>
         <div id="navigation_panel">
           <div id="topmenu">
-            <ul>
-              <li><a href="<%= root_path %>" class="over"><span>Home</span></a></li>
+			<% if admin_signed_in? %>
+			<ul>
+			  <li><a href="<%= root_path %>" class="over"><span>Home</span></a></li>
 			  <li><a href="<%= assuntos_path %>"><span>Assuntos</span> </a></li>
 			  <li><a href="<%= areas_path %>"><span>Áreas</span> </a></li>
 			  <li><a href="<%= categorias_path %>"><span>Categorias</span> </a></li>
-              <li><a href="<%= perfis_path %>"><span>Perfis</span> </a></li>
-            </ul>
+			  <li><a href="<%= perfis_path %>"><span>Perfis</span> </a></li>
+			</ul>
+			<% end %>
             <div class="clear"></div>
           </div>
         </div>
