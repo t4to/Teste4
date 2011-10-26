@@ -1,33 +1,29 @@
 Teste4::Application.routes.draw do
 
-  get "mobile/index"
+	match 'm' => 'mobile#index', :as => 'mobile_home'
+	match ':assunto_id/areas' => 'home#lista_area', :as => 'areas_mobile'
+	match ':area_id/categorias' => 'home#lista_categoria', :as => 'categorias_mobile'
+	match ':categoria_id/perfis' => 'home#lista_perfil', :as => 'perfis_mobile'
+	match ':perfil_id/posts' => 'home#twitter', :as => 'twitter_mobile'
 
-  get "mobile/lista_area"
-
-  get "mobile/lista_categoria"
-
-  get "mobile/lista_perfil"
-
-  get "mobile/twitter"
-
-  devise_for :admins,
+	devise_for :admins,
 			:path => '/',
 			:path_names => {
 				:sign_in  => 'entrar',
 				:sign_out => 'sair',
 				:sign_up => 'registrar'}
 
-  root :to => "home#index"
+	root :to => "home#index"
 
 
-  resources :perfis
+	resources :perfis
 
-  resources :categorias
+	resources :categorias
 
-  resources :areas
+	resources :areas
 
-  resources :assuntos
+	resources :assuntos
 
 
-  # See how all your routes lay out with "rake routes"
+	# See how all your routes lay out with "rake routes"
 end

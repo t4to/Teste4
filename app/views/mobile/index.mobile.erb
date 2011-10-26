@@ -1,0 +1,5 @@
+<div data-role="header" data-theme="b"> 
+	<h1><%= @assunto.nome %></h1> 
+</div><!-- /header -->
+<%= link_to "Áreas", areas_mobile_path(@assunto.id), "data-role" => "button", "data-theme" => "d"%>
+<%= link_to "Informações", areas_mobile_path(@assunto.id), "data-role" => "button", "data-rel" => "dialog", "data-transition" => "pop", "data-theme" => "d"%>
