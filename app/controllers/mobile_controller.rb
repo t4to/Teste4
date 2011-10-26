@@ -1,24 +1,29 @@
 class MobileController < ApplicationController
 	def index
 		@assunto = Assunto.first
+		@titulo = @assunto.nome
 	end
 
 	def info
+		@titulo = 'Informações'
 		@assunto = Assunto.first
 	end
 	
 	def lista_area
 		@areas = Area.find_all_by_assunto_id params[:assunto_id]
+		@titulo = 'Áreas'
 	end
 
 	def lista_categoria
 		@categorias = Categoria.find_all_by_area_id params[:area_id]
 		@area = Area.find_by_id params[:area_id]
+		@titulo = @area.nome
 	end
 
 	def lista_perfil
 		@perfis = Perfil.find_all_by_categoria_id params[:categoria_id]
 		@categoria = Categoria.find_by_id params[:categoria_id]
+		@titulo = @categoria.nome
 	end
 
 	def twitter
