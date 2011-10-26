@@ -1,6 +1,7 @@
 Teste4::Application.routes.draw do
 
 	match 'm' => 'mobile#index', :as => 'mobile_home'
+	match 'm/info' => 'mobile#info', :as => 'mobile_info'
 	match ':assunto_id/areas' => 'home#lista_area', :as => 'areas_mobile'
 	match ':area_id/categorias' => 'home#lista_categoria', :as => 'categorias_mobile'
 	match ':categoria_id/perfis' => 'home#lista_perfil', :as => 'perfis_mobile'

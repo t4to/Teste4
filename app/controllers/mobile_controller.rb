@@ -3,6 +3,10 @@ class MobileController < ApplicationController
 		@assunto = Assunto.first
 	end
 
+	def info
+		@assunto = Assunto.first
+	end
+	
 	def lista_area
 		@areas = Area.find_all_by_assunto_id params[:assunto_id]
 	end
