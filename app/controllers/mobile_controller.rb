@@ -27,10 +27,13 @@ class MobileController < ApplicationController
 	end
 
 	def twitter
-		@perfil = Perfil.find_by_id params[:perfil_id]
-
-		@screen_name = @perfil.user
-		  
+		if params[:parm].to_i.to_s != "0"
+			@perfil = Perfil.find_by_id params[:parm]	#params[:perfil_id]
+			@screen_name = @perfil.user
+		else
+			@screen_name = params[:parm]
+		end
+		
 		@resultados = Twitter.user_timeline(@screen_name, {:count => 20})
 			  
 		if not @resultados
