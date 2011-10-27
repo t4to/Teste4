@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 	private
 	
 	def mobile_device?
-		request.user_agent =~ /Mobile|webOS/
+		request.user_agent =~ /Mobile|webOS|Opera/
 	end
 
 	helper_method :mobile_device?
