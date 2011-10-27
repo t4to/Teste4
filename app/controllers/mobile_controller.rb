@@ -1,3 +1,4 @@
+# coding: utf-8
 class MobileController < ApplicationController
 	def index
 		@assunto = Assunto.first
