@@ -1,5 +1,5 @@
 # coding: utf-8
-<h1>Listing areas</h1>
+<h1>Manutenção de áreas</h1>
 
 <table>
   <tr>
@@ -14,13 +14,13 @@
   <tr>
     <td><%= area.assunto_id %></td>
     <td><%= area.nome %></td>
-    <td><%= link_to 'Show', area %></td>
-    <td><%= link_to 'Edit', edit_area_path(area) %></td>
-    <td><%= link_to 'Destroy', area, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Visualizar', area %></td>
+    <td><%= link_to 'Alterar', edit_area_path(area) %></td>
+    <td><%= link_to 'Excluir', area, :confirm => 'Confirmar exclusão?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Area', new_area_path %>
+<%= link_to 'Incluir Área', new_area_path %>

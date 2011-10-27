@@ -8,6 +8,14 @@ Teste4::Application.routes.draw do
 	match 'm/:parm/posts' => 'mobile#twitter', :as => 'twitter_mobile'
 	#match 'm/:perfil_id/posts' => 'mobile#twitter', :as => 'twitter_mobile'
 
+	resources :perfis
+
+	resources :categorias
+
+	resources :areas
+
+	resources :assuntos
+	
 	devise_for :admins,
 			:path => '/',
 			:path_names => {
@@ -16,15 +24,6 @@ Teste4::Application.routes.draw do
 				:sign_up => 'registrar'}
 
 	root :to => "home#index"
-
-
-	resources :perfis
-
-	resources :categorias
-
-	resources :areas
-
-	resources :assuntos
 
 
 	# See how all your routes lay out with "rake routes"
