@@ -1,3 +1,4 @@
+# coding: utf-8
 class ApplicationController < ActionController::Base
 	before_filter :prepare_for_mobile
 	

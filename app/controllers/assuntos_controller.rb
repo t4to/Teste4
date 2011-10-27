@@ -1,3 +1,4 @@
+# coding: utf-8
 class AssuntosController < ApplicationController
 
 	before_filter :authenticate_admin!

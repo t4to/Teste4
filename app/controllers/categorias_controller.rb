@@ -1,3 +1,4 @@
+# coding: utf-8
 class CategoriasController < ApplicationController
 
 	before_filter :authenticate_admin!
