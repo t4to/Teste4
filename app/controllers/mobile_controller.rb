@@ -45,8 +45,10 @@ class MobileController < ApplicationController
 
 		if @resultados and not @resultados.empty?
 			@imagem_perfil = @resultados[0].user.profile_image_url
+			@bio = " " + @resultados[0].user.description
 		else
 			@imagem_perfil = Twitter.user(@screen_name).profile_image_url
+			@bio = " " + Twitter.user(@screen_name).description
 		end
 	end
 
