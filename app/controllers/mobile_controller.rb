@@ -35,6 +35,8 @@ class MobileController < ApplicationController
 			@screen_name = params[:parm]
 		end
 		
+		@go_twitter = "http://twitter.com/" + @screen_name
+		
 		@resultados = Twitter.user_timeline(@screen_name, {:count => 20})
 			  
 		if not @resultados
