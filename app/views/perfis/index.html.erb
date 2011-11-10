@@ -13,7 +13,9 @@
 
 <% @perfis.each do |perfil| %>
   <tr>
-    <td><%= perfil.categoria_id %></td>
+	<% @categ = Categoria.find_by_id(perfil.categoria_id) %>
+    <!-- <td><%= perfil.categoria_id %></td> -->
+	<td><%= @categ.nome %></td>
     <td><%= perfil.user %></td>
     <td><%= perfil.nome %></td>
     <td><%= link_to 'Visulizar', perfil %></td>

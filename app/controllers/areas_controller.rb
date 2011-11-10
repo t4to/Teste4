@@ -2,6 +2,7 @@
 class AreasController < ApplicationController
 
 	before_filter :authenticate_admin!
+	
 
   # GET /areas
   # GET /areas.xml
@@ -18,6 +19,7 @@ class AreasController < ApplicationController
   # GET /areas/1.xml
   def show
     @area = Area.find(params[:id])
+	@assunto = Assunto.find_by_id(@area.assunto_id)
 
     respond_to do |format|
       format.html # show.html.erb

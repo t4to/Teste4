@@ -12,7 +12,9 @@
 
 <% @categorias.each do |categoria| %>
   <tr>
-    <td><%= categoria.area_id %></td>
+	<% @area = Area.find_by_id(categoria.area_id) %>
+    <!-- <td><%= categoria.area_id %></td> --!>
+	<td><%= @area.nome %></td>
     <td><%= categoria.nome %></td>
     <td><%= link_to 'Visualizar', categoria %></td>
     <td><%= link_to 'Alterar', edit_categoria_path(categoria) %></td>

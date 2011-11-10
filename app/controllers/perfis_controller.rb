@@ -18,6 +18,7 @@ class PerfisController < ApplicationController
   # GET /perfis/1.xml
   def show
     @perfil = Perfil.find(params[:id])
+	@cat = Categoria.find_by_id(@perfil.categoria_id)
 
     respond_to do |format|
       format.html # show.html.erb

@@ -18,6 +18,7 @@ class CategoriasController < ApplicationController
   # GET /categorias/1.xml
   def show
     @categoria = Categoria.find(params[:id])
+	@area = Area.find_by_id(@categoria.area_id)
 
     respond_to do |format|
       format.html # show.html.erb
