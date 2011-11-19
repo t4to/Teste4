@@ -6,7 +6,7 @@ class PerfisController < ApplicationController
   # GET /perfis
   # GET /perfis.xml
   def index
-    @perfis = Perfil.all
+    @perfis = Perfil.order('categoria_id ASC').all
 
     respond_to do |format|
       format.html # index.html.erb

@@ -24,5 +24,6 @@
 </table>
 
 <br />
-
+<% if Assunto.count == 0%>
 <%= link_to 'Incluir Assunto', new_assunto_path %>
+<% end %>

@@ -48,7 +48,7 @@ class AssuntosController < ApplicationController
 
     respond_to do |format|
       if @assunto.save
-        format.html { redirect_to(assunto_url, :notice => 'Assunto was successfully created.') }
+        format.html { redirect_to(assuntos_url, :notice => 'Assunto was successfully created.') }
         format.xml  { render :xml => @assunto, :status => :created, :location => @assunto }
       else
         format.html { render :action => "new" }
